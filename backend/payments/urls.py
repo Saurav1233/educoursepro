@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import (
     InitiatePurchaseView,
+    VerifyPaymentView,
     UserPurchaseListView,
     CheckPurchaseView,
     AdminPurchaseListView,
@@ -9,6 +10,7 @@ from .views import (
 
 urlpatterns = [
     path('purchase/', InitiatePurchaseView.as_view(), name='initiate_purchase'),
+    path('verify/', VerifyPaymentView.as_view(), name='verify_payment'),
     path('my-purchases/', UserPurchaseListView.as_view(), name='my_purchases'),
     path('check/<int:course_id>/', CheckPurchaseView.as_view(), name='check_purchase'),
     # Admin
