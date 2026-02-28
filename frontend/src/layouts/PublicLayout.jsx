@@ -3,7 +3,18 @@ import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 import { BookOpen, LogOut, User, LayoutDashboard, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { useTheme } from '../hooks/useTheme';
+import { Sun, Moon } from 'lucide-react';
 
+// Inside component:
+const { theme, toggleTheme } = useTheme();
+
+// Inside JSX (in navbar):
+<button
+  onClick={toggleTheme}
+  className="theme-toggle"
+  title="Toggle theme"
+/>
 export default function PublicLayout() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
